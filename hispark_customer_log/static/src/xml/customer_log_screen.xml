@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	
+ 	<t t-name="CustomerLogScreen" owl="1">
+        <div class="customerlog partnerlist-screen screen">
+            <div class="screen-content customerlog-screen-content">
+                <section class="top-content mob-top-header">   
+                <span class='button back mob-back' t-on-click="cancelButton">
+					<i class='fa fa-angle-double-left'></i>
+					Cancel
+                </span>
+                <span class="client-name-top ">                                                  
+            		<t t-if='env.pos.get_order().get_partner()'>
+            			<div class='partner-name'><t t-esc="env.pos.get_order().get_partner().name" /></div>  
+            		</t>
+            	</span>
+              	</section>
+                <section class="full-content" style="margin-bottom: 50px;">
+                    <div class='window'>
+                        <section class='subwindow'>
+							<p class="dltitle"> Order Details </p>
+								<div class='subwindow-container border section-max-height table-design'>
+                                <div class='subwindow-container-fix  touch-scrollable scrollable-y ' style="overflow-x:auto !important;">                                
+                                 	<table id="dl_otable" class="table table-bordered border-primary partner-list"><thead>
+								            <tr class="de_back">
+								            	<th></th>
+								            	<th>S.no</th>
+						                       	<th>Order Ref</th>
+						                       	<th>Order Date</th>
+						                       	<th>Status</th>
+						                       	<th>Invoice Ref</th>
+						                       	<th>Amount</th>
+						                       	<th>Invoice</th>
+						                       	
+								            </tr>
+							          	</thead>
+										<tbody>
+											<t t-foreach="getCurrentScreenParam(param)['orders']" t-as="line" t-key="line.id">
+								         	<tr class="de_lines">
+								         		<td>
+						                		<a t-att-id="line.id"  class="expand_func" style="cursor:pointer;"><i class=" fa fa-angle-double-down fa-angle-double-up " aria-hidden="true">
+						                		<span t-attf-id="symbolcollapse_{{line.id}}"></span></i></a>
+						                		</td> 
+						                		<td class='dl_order_id' style="display:none;"><t t-esc='line.id'/></td>
+						                		<td class='dl_order_type'  style="display:none;"><t t-esc='line.type'/></td>
+						                		<td><t t-esc='line.sno'/></td> 
+						                		<td><t t-esc='line.name'/></td>
+						                		<td><t t-esc='line.date_order'/></td>
+						                		<td><t t-esc='line.status'/></td>
+						                		<td><t t-esc='line.invoice_ref'/></td>
+						                		<td class='dl_invoice_id' style="display:none !important;"><t t-esc='line.invoice_id'/></td> 
+						                		<td ><t t-esc='line.amount_total'/></td>
+									          	<td>
+									          		<t t-if="line.invoice_ref"> 
+								                		 <a class="order_invoice" style="cursor:pointer;"><i class="fa fa-print" aria-hidden="true"></i></a>    
+				            						</t> 
+				             						<t t-else=""></t> 	
+								          		</td>
+			          						</tr>			          						
+			          						<tr>
+			          						<td colspan="8" style="padding:0;">
+			          							<div t-attf-id="expandline_{{line.id}}" class="expandlines">
+			          							</div>
+			          						</td>
+			          						</tr>
+			         					</t>			          
+	         						</tbody>
+                                 </table>
+                               </div>
+                            </div>           	
+                        </section>
+                    </div>
+				</section>
+            </div>
+        </div>
+    </t>
+    
+    <!-- Designing the Expand product lines in Customer log screen -->
+   	<t t-name="CLOLineScreen">
+		<table class='dl-olist' id="dl_oltable" style="margin:5px 5px 5px 5px;">
+			<thead>
+	        	<tr>
+	         		<th>S.no</th>
+	                <th>Product</th>      
+	                <th class='text-right' >Qty</th>
+	                <th class='text-right' >Amount</th>
+	            </tr>
+	  		</thead>
+          	<tbody>
+          		<t t-set="i" t-value="0"/>
+          		<t t-foreach="lines" t-as="line" t-key="line.id">
+		  			<tr t-att-id="i" t-attf-line_id="#{line.id}">
+		            	<td><t t-esc='line.sno or ""' /></td>
+		            	<td><t t-esc='line.product or ""' /></td>
+		            	<td class='text-right' ><t t-esc='line.qty or ""' /></td>
+		            	<td class='text-right' ><t t-esc='line.price_unit or ""' /></td>                 
+					</tr>
+					<t t-set="i" t-value="i+1"/>   
+				</t>
+			</tbody>
+		</table>  
+	</t>
+</templates>

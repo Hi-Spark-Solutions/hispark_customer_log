@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-inherit="point_of_sale.TicketButton" t-inherit-mode="extension">
+       <xpath expr="//div[hasclass('ticket-button')]" position="after">
+           <t t-name="PosCustomer" owl="1">
+              <div class="cust_log" >
+			     <div class="cust_log"  t-on-click="onClickPosCustomer">
+          			<span class="icon order-button square customerlog-button" title="Customer Log">
+						<i class="oe_link_icon oe-link fa fa-bar-chart oe-white oe_icon_customfloat" />
+					</span>
+				</div>
+			</div>
+	      </t>
+       </xpath>
+   	</t>
+</templates>

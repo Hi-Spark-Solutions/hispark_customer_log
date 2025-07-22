@@ -1,0 +1,167 @@
+/* e) The Client List Screen */
+
+.pos .partnerlist-screen .dl-list,
+.pos .partnerlist-screen .dl-olist,
+.bootstrap-table .table
+{
+    font-size: 16px; 
+    width: 100%;
+    line-height: 40px;
+}
+.pos .partnerlist-screen .dltitle{
+    font-size: 1.5em;
+    width: 100%;
+    font-weight:bold;
+    text-align:center;
+}
+.pos .partnerlist-screen .dl-list th,
+.pos .partnerlist-screen .dl-list td {
+    padding: 0px 8px;
+}
+.pos .partnerlist-screen .client-list.dl-list tr{
+     transition: all 150ms linear;
+     background: none;
+}
+.pos .partnerlist-screen .dl-list thead > tr,
+.pos .partnerlist-screen .client-list.dl-list tr:nth-child(even) {
+   background: none;
+}
+.pos .partnerlist-screen .dl-list tr.highlight{
+    transition: all 150ms linear;
+    background: rgb(73, 166, 200) !important;
+    color: white;
+}
+.pos .partnerlist-screen .dl-list tr.lowlight{
+    transition: all 150ms linear;
+    background: rgb(216, 238, 227);
+}
+.pos .partnerlist-screen .dl-list tr.lowlight:nth-child(even){
+    transition: all 150ms linear;
+    background: rgb(227, 246, 237);
+}
+.pos .partnerlist-screen .button {
+    line-height: 32px;
+    padding: 3px 13px;
+    background: rgb(230, 230, 230);
+    margin: 12px;
+    border-radius: 3px;
+    border: solid 1px rgb(209, 209, 209);
+    cursor: pointer;
+    transition: all 150ms linear;
+}
+.pos .partnerlist-screen .full-content .subwindow-container.border {
+    height: auto;
+    border-bottom: dashed 1px rgb(215,215,215);
+}
+.pos .partnerlist-screen .full-content .dl-window.subwindow {
+    display: block;
+    height: 500px;
+}
+.pos .partnerlist-screen .renew-button{
+    border-left-width: 1px;
+    margin-left:-1px;
+}
+
+.pos .partnerlist-screen .dl-olist table, 
+.pos .partnerlist-screen .dl-olist th, 
+.pos .partnerlist-screen .dl-olist td {
+    border: 1px solid #ddd;
+}
+
+.pos .partnerlist-screen .dl-olist th,
+.pos .partnerlist-screen .dl-olist td {
+    padding: 0px 30px;
+}
+.pos .partnerlist-screen .dl-olist > thead > tr > th,
+.pos .partnerlist-screen .dl-olist > tbody > tr > th,
+.pos .partnerlist-screen .dl-olist > tfoot > tr > th,
+.pos .partnerlist-screen .dl-olist > thead > tr > td,
+.pos .partnerlist-screen .dl-olist > tbody > tr > td,
+.pos .partnerlist-screen .dl-olist > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.pos .partnerlist-screen .dl-olist > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+/*----------------------------------------------------------------------------*/
+
+table.menu {
+    width: auto;
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+
+.pos .customerlog .window {
+	overflow-y:scroll !important;
+}
+.list-group{
+	font-size:16px;
+}
+
+.pos .customerlog .full-content .subwindow-container.border {
+    border-bottom: solid 3px #49A6C8;
+}
+.section-max-height{
+	max-height: 240px;
+    overflow: auto;
+}
+.dl_order_id{
+	display:none !important;
+}
+.dl_order_type{
+	display:none !important;
+}
+.pos_text_left{
+	text-align: left !important;
+}
+.payment_amount{
+	width: 40% !important;
+	font-size: 14px !important;
+}
+.customerlog-screen-content{
+	max-width: 90% !important;
+	margin-left: 5% !important;
+	margin-right: 5% !important;
+}
+.customer-log-table{
+	width: 100% !important;
+}
+.customer-log-table-size{
+	width: 98% !important;
+}
+
+.cust_log span{
+	background: content-box !important;
+	color:white !important;
+	font-size: 22px !important;
+}
+
+.client-name-top{
+	width: 80%;
+    font-weight:bold;
+    text-align:center;
+}
+
+.table-design{
+	display:initial !important;
+}
+
+/*mediaquery*/
+@media  screen and (max-width:767px){
+	.mob-top-header{
+		width:100%;
+	}
+	.mob-back{
+		font-size:small !important;
+		display:inline-flex;
+	}
+	.mob-back i{
+		margin:9px 8px 0px -7px;
+	}
+	
+}
